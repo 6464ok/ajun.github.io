@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>机器人工程专业人才 - 个人简历</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-blue: #0066cc;
+      --accent-blue: #00a8ff;
+      --light-blue: #e6f7ff;
+      --dark-blue: #001a33;
+      --deep-blue: #000d1a;
+      --text-white: #ffffff;
+      --text-light: #f0f0f0;
+      --text-gray: #a0a0a0;
+      --glass-bg: rgba(255, 255, 255, 0.1);
+      --glass-border: rgba(255, 255, 255, 0.2);
+      --transition-smooth: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Sans SC', sans-serif;
+      background-color: var(--deep-blue);
+      color: var(--text-light);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* 滚动条样式 */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--deep-blue);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary-blue);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-blue);
+    }
+
+    /* 通用样式 */
+    .container {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-title {
+      font-family: 'Orbitron', 'Noto Sans SC', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue));
+    }
+
+    /* 导航样式 */
+    .nav-dots {
+      position: fixed;
+      right: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 100;
+    }
+
+    .nav-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.3);
+      margin: 15px 0;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .nav-dot.active {
+      background-color: var(--accent-blue);
+      box-shadow: 0 0 10px var(--accent-blue);
+    }
+
+    /* 头部英雄区域 */
+    .hero {
+      height: 100vh;
+      background-image: url('hero-bg.png');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(0, 13, 26, 0.7), rgba(0, 13, 26, 0.9));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 2rem;
+    }
+
+    .hero-name {
+      font-family: 'Orbitron', 'Noto Sans SC', sans-serif;
+      font-size: 4rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg, var(--accent-blue), #ffffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 30px rgba(0, 168, 255, 0.5);
+      animation: fadeInDown 1s ease-out;
+    }
+
+    .hero-title {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      color: var(--text-light);
+      animation: fadeInDown 1s ease-out 0.2s both;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 3rem;
+      color: var(--text-gray);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeInDown 1s ease-out 0.4s both;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      animation: fadeInUp 1s ease-out 0.6s both;
+    }
+
+    .cta-button {
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: var(--transition-smooth);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .cta-primary {
+      background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue));
+      color: white;
+      border: none;
+      box-shadow: 0 4px 15px rgba(0, 168, 255, 0.3);
+    }
+
+    .cta-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 168, 255, 0.5);
+    }
+
+    .cta-secondary {
+      background: transparent;
+      color: var(--text-light);
+      border: 2px solid var(--accent-blue);
+    }
+
+    .cta-secondary:hover {
+      background: rgba(0, 168, 255, 0.1);
+      transform: translateY(-3px);
+    }
+
+    /* 项目经验区域 */
+    .projects {
+      background: linear-gradient(135deg, var(--deep-blue), var(--dark-blue));
+      padding: 6rem 0;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .project-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid var(--glass-border);
+      border-radius: 15px;
+      padding: 2rem;
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: var(--transition-smooth);
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .project-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .project-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--accent-blue);
+      font-family: 'Orbitron', 'Noto Sans SC', sans-serif;
+    }
+
+    .project-period {
+      font-size: 0.9rem;
+      color: var(--text-gray);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .project-details {
+      list-style: none;
+    }
+
+    .project-details li {
+      margin-bottom: 0.8rem;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .project-details li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--accent-blue);
+    }
+
+    /* 技能区域 */
+    .skills {
+      background: linear-gradient(135deg, var(--dark-blue), var(--deep-blue));
+      padding: 6rem 0;
+    }
+
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .skills-left {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .skills-right {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .skill-category {
+      margin-bottom: 3rem;
+    }
+
+    .skill-category-title {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      color: var(--accent-blue);
+      font-family: 'Orbitron', 'Noto Sans SC', sans-serif;
+    }
+
+    .skill-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .skill-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-name {
+      font-weight: 500;
+    }
+
+    .skill-level {
+      color: var(--text-gray);
+    }
+
+    .skill-bar {
+      height: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .skill-progress {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue));
+      border-radius: 3px;
+      position: relative;
+      width: 0;
+      transition: width 1.5s ease-out;
+    }
+
+    .skill-progress::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      animation: shimmer 2s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 2rem;
+    }
+
+    .skill-tag {
+      padding: 0.5rem 1rem;
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      font-size: 0.9rem;
+      transition: var(--transition-smooth);
+    }
+
+    .skill-tag:hover {
+      background: rgba(0, 168, 255, 0.2);
+      transform: translateY(-3px);
+    }
+
+    /* 教育和荣誉区域 */
+    .education-honors {
+      background: linear-gradient(135deg, var(--deep-blue), var(--dark-blue));
+      padding: 6rem 0;
+    }
+
+    .education-honors-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+    }
+
+    .education-section, .honors-section {
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid var(--glass-border);
+      border-radius: 15px;
+      padding: 2rem;
+      transition: var(--transition-smooth);
+    }
+
+    .education-section:hover, .honors-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .education-item {
+      margin-bottom: 2rem;
+    }
+
+    .education-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .education-title {
+      font-size: 1.3rem;
+      color: var(--accent-blue);
+      margin-bottom: 0.5rem;
+      font-family: 'Orbitron', 'Noto Sans SC', sans-serif;
+    }
+
+    .education-period {
+      font-size: 0.9rem;
+      color: var(--text-gray);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .education-details {
+      list-style: none;
+    }
+
+    .education-details li {
+      margin-bottom: 0.8rem;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .education-details li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--accent-blue);
+    }
+
+    .honors-list {
+      list-style: none;
+    }
+
+    .honors-list li {
+      margin-bottom: 1.2rem;
+      position: relative;
+      padding-left: 1.5rem;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .honors-list li::before {
+      content: '🏆';
+      position: absolute;
+      left: 0;
+      font-size: 1rem;
+    }
+
+    /* 联系区域 */
+    .contact {
+      background: linear-gradient(135deg, var(--dark-blue), var(--deep-blue));
+      padding: 6rem 0;
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+    }
+
+    .contact-info {
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid var(--glass-border);
+      border-radius: 15px;
+      padding: 2rem;
+      transition: var(--transition-smooth);
+    }
+
+    .contact-info:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact-item {
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--primary-blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    .contact-text {
+      flex: 1;
+    }
+
+    .contact-label {
+      font-size: 0.9rem;
+      color: var(--text-gray);
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-value {
+      font-weight: 500;
+    }
+
+    .self-intro {
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid var(--glass-border);
+      border-radius: 15px;
+      padding: 2rem;
+      transition: var(--transition-smooth);
+    }
+
+    .self-intro:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .self-intro-title {
+      font-size: 1.3rem;
+      color: var(--accent-blue);
+      margin-bottom: 1.5rem;
+      font-family: 'Orbitron', 'Noto Sans SC', sans-serif;
+    }
+
+    .self-intro-text {
+      line-height: 1.8;
+      text-align: justify;
+    }
+
+    /* 页脚 */
+    footer {
+      background: var(--deep-blue);
+      padding: 2rem 0;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-text {
+      color: var(--text-gray);
+      font-size: 0.9rem;
+    }
+
+    /* 动画 */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      .hero-name {
+        font-size: 3rem;
+      }
+
+      .hero-title {
+        font-size: 1.5rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .cta-button {
+        width: 100%;
+      }
+
+      .nav-dots {
+        right: 15px;
+      }
+
+      .nav-dot {
+        width: 10px;
+        height: 10px;
+        margin: 10px 0;
+      }
+
+      .skills-container {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-name {
+        font-size: 2.5rem;
+      }
+
+      .hero-title {
+        font-size: 1.2rem;
+      }
+
+      .container {
+        padding: 0 1rem;
+      }
+
+      .section {
+        padding: 4rem 0;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .education-honors-container {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 导航点 -->
+  <div class="nav-dots">
+    <div class="nav-dot active" data-section="hero"></div>
+    <div class="nav-dot" data-section="projects"></div>
+    <div class="nav-dot" data-section="skills"></div>
+    <div class="nav-dot" data-section="education-honors"></div>
+    <div class="nav-dot" data-section="contact"></div>
+  </div>
+
+  <!-- 英雄区域 -->
+  <section id="hero" class="section hero">
+    <div class="hero-content">
+      <h1 class="hero-name">****</h1>
+      <h2 class="hero-title">机器人工程专业人才</h2>
+      <p class="hero-subtitle">专注于机器人视觉识别、路径规划及硬件设计，拥有丰富的国家级竞赛和项目经验</p>
+      <div class="cta-buttons">
+        <a href="resume.pdf" class="cta-button cta-primary" id="download-resume" download>
+          <i class="fas fa-download"></i> 下载简历
+        </a>
+        <a href="#contact" class="cta-button cta-secondary">
+          <i class="fas fa-envelope"></i> 联系我
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 项目经验区域 -->
+  <section id="projects" class="section projects">
+    <div class="container">
+      <h2 class="section-title fade-in">项目与竞赛经验</h2>
+      <div class="project-grid">
+        <div class="project-card fade-in">
+          <h3 class="project-title">中国机器人及人工智能大赛</h3>
+          <span class="project-period">2024.4-2024.8</span>
+          <ul class="project-details">
+            <li>作为核心开发者，主导自动人形机器人的视觉识别系统、路径规划算法及基于tag码的精准定位功能</li>
+            <li>采用Python编写视觉识别和运动控制算法，将系统稳定性提高至96%，处理耗时减少近50%</li>
+            <li>通过算法优化和系统集成，显著提升机器人任务完成率，最终荣获国家一等奖</li>
+          </ul>
+        </div>
+
+        <div class="project-card fade-in">
+          <h3 class="project-title">百度智能云智能服务机器人项目</h3>
+          <span class="project-period">2025.5-2025.6</span>
+          <ul class="project-details">
+            <li>担任小组队长，基于ROS框架完成服务机器人的路径规划与雷达建图，实现食物分类码放场景</li>
+            <li>引入yolov3算法，将原有识别数量提升100%，识别精确度提高至90%，大幅提升系统性能</li>
+            <li>优化食物抓取与放置动作控制算法，显著提升食物抓取/放置平稳性，减少失误率达60%</li>
+          </ul>
+        </div>
+
+        <div class="project-card fade-in">
+          <h3 class="project-title">全国大学生电子设计大赛</h3>
+          <span class="project-period">2024.6-2024.7</span>
+          <ul class="project-details">
+            <li>基于TI MSPM0平台设计自动行驶小车，独立负责硬件电路设计与开发</li>
+            <li>优化小车运动控制系统，提高转向精度和稳定性，使小车能够在复杂环境中平稳行驶</li>
+            <li>通过多次迭代测试，解决电路干扰问题，提升系统整体可靠性</li>
+          </ul>
+        </div>
+
+        <div class="project-card fade-in">
+          <h3 class="project-title">校级创新实验项目</h3>
+          <span class="project-period">2024.9-至今</span>
+          <ul class="project-details">
+            <li>参与基于STM32微控制器的自动车位检测与泊车引导系统开发</li>
+            <li>负责车牌识别模块，成功实现车牌定位、字符分割等核心功能，识别准确率达85%</li>
+            <li>优化算法处理流程，降低系统资源占用，提高实时性能</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 技能区域 -->
+  <section id="skills" class="section skills">
+    <div class="container">
+      <h2 class="section-title fade-in">专业技能</h2>
+      <div class="skills-container">
+        <div class="skills-left fade-in">
+          <div class="skill-category">
+            <h3 class="skill-category-title">核心技能</h3>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">机器人视觉系统</span>
+                <span class="skill-level">95%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="95"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">编程语言 (Python、C)</span>
+                <span class="skill-level">90%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="90"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">ROS框架</span>
+                <span class="skill-level">85%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="85"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">工业机械臂</span>
+                <span class="skill-level">88%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="88"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-right fade-in">
+          <div class="skill-category">
+            <h3 class="skill-category-title">辅助技能</h3>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">硬件设计</span>
+                <span class="skill-level">80%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="80"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">团队管理</span>
+                <span class="skill-level">92%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="92"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">算法优化</span>
+                <span class="skill-level">87%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="87"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">项目管理</span>
+                <span class="skill-level">85%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="85"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-tags fade-in">
+        <div class="skill-tag">Python</div>
+        <div class="skill-tag">C语言</div>
+        <div class="skill-tag">ROS</div>
+        <div class="skill-tag">机器视觉</div>
+        <div class="skill-tag">RobotStudio</div>
+        <div class="skill-tag">STM32</div>
+        <div class="skill-tag">MSPM0</div>
+        <div class="skill-tag">路径规划</div>
+        <div class="skill-tag">雷达建图</div>
+        <div class="skill-tag">电路设计</div>
+        <div class="skill-tag">嵌入式系统</div>
+        <div class="skill-tag">团队协作</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 教育和荣誉区域 -->
+  <section id="education-honors" class="section education-honors">
+    <div class="container">
+      <h2 class="section-title fade-in">教育背景与荣誉</h2>
+      <div class="education-honors-container">
+        <div class="education-section fade-in">
+          <h3 class="skill-category-title">教育背景</h3>
+          <div class="education-item">
+            <h4 class="education-title">长沙学院 | 机器人工程专业 | 本科</h4>
+            <span class="education-period">2022.9-2026.6</span>
+            <ul class="education-details">
+              <li>系统学习Python程序开发设计、数字电子技术、模拟电子技术、C语言、机械原理等专业课程</li>
+              <li>深入研究ARM嵌入式系统开发、人工智能与机器学习、单片机原理与应用、机器人导论等前沿技术</li>
+              <li>学业成绩优异，曾获2023-2024学年丙等奖学金</li>
+            </ul>
+          </div>
+          <div class="education-item">
+            <h4 class="education-title">湖南工控帮智能制造研究院有限公司</h4>
+            <span class="education-period">2024.11-2024.12</span>
+            <ul class="education-details">
+              <li>基于RobotStudio软件搭建机械臂仿真平台，成功实现分类码垛任务，提高生产线效率15%</li>
+              <li>开发基于海康系列产品的机器视觉系统，实现物品精准检测，识别准确率达95%以上</li>
+              <li>凭借出色表现和技术能力，从数十名实习生中脱颖而出，被评为2024年度优秀实习生（前三名）</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="honors-section fade-in">
+          <h3 class="skill-category-title">所获荣誉</h3>
+          <ul class="honors-list">
+            <li>第二十六届中国机器人及人工智能大赛国家一等奖（2024年）</li>
+            <li>湖南工控帮2024年度优秀实习生（前三名）</li>
+            <li>长沙学院2023-2024学年丙等奖学金</li>
+            <li>湖南"一校一书"征文活动校级优秀奖</li>
+            <li>长沙学院机器人实验室核心成员（2024.10-2026.6）</li>
+            <li>担任实验室核心技术骨干，组织并带领23/24级20余名学弟学妹参与电子设计竞赛和机器人竞赛培训</li>
+            <li>定期策划技术分享会和实训任务，建立系统化的知识传承机制，显著提升实验室整体技术水平</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系区域 -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <h2 class="section-title fade-in">联系方式</h2>
+      <div class="contact-container">
+        <div class="contact-info fade-in">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="contact-text">
+              <div class="contact-label">姓名</div>
+              <div class="contact-value">****</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-text">
+              <div class="contact-label">现居地</div>
+              <div class="contact-value">长沙</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-text">
+              <div class="contact-label">电话</div>
+              <div class="contact-value">************</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-text">
+              <div class="contact-label">邮箱</div>
+              <div class="contact-value">spire-03qualms@icloud.com</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="contact-text">
+              <div class="contact-label">学历</div>
+              <div class="contact-value">长沙学院本科（2022.9-2026.6）机器人工程专业</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="self-intro fade-in">
+          <h3 class="self-intro-title">自我评价</h3>
+          <p class="self-intro-text">
+            我是一名专注于机器人工程领域的本科生，具备扎实的理论基础和丰富的实践经验。在机器人视觉识别、路径规划及硬件设计方面有深入研究，能够独立完成从算法设计到系统实现的全流程开发。通过多次参与国家级竞赛和实习项目，培养了出色的团队协作能力和项目管理能力。我善于解决复杂技术问题，具有创新思维和持续学习的热情，期望能在机器人工程领域继续深耕发展，为智能制造和人工智能应用贡献力量。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer>
+    <div class="container">
+      <p class="footer-text">© 2025 | 机器人工程专业简历 | 最后更新：2025年5月29日</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 滚动监听
+      const sections = document.querySelectorAll('.section');
+      const navDots = document.querySelectorAll('.nav-dot');
+      
+      // 淡入动画
+      const fadeElements = document.querySelectorAll('.fade-in');
+      
+      // 技能进度条动画
+      const skillBars = document.querySelectorAll('.skill-progress');
+      
+      // 平滑滚动
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+      
+      // 下载简历按钮
+      document.getElementById('download-resume').addEventListener('click', function(e) {
+        e.preventDefault();
+        alert('简历下载功能将在实际部署时启用');
+      });
+      
+      // 导航点点击事件
+      navDots.forEach(dot => {
+        dot.addEventListener('click', function() {
+          const targetSection = document.getElementById(this.getAttribute('data-section'));
+          if (targetSection) {
+            window.scrollTo({
+              top: targetSection.offsetTop,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+      
+      // 滚动监听函数
+      function checkScroll() {
+        const scrollPosition = window.scrollY;
+        
+        // 更新导航点状态
+        sections.forEach((section, index) => {
+          const sectionTop = section.offsetTop - 100;
+          const sectionBottom = sectionTop + section.offsetHeight;
+          
+          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            navDots.forEach(dot => dot.classList.remove('active'));
+            navDots[index].classList.add('active');
+          }
+        });
+        
+        // 淡入动画
+        fadeElements.forEach(element => {
+          const elementTop = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+          
+          if (elementTop < windowHeight * 0.85) {
+            element.classList.add('visible');
+          }
+        });
+        
+        // 技能进度条动画
+        skillBars.forEach(bar => {
+          const barTop = bar.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+          
+          if (barTop < windowHeight * 0.85) {
+            const width = bar.getAttribute('data-width');
+            bar.style.width = width + '%';
+          }
+        });
+      }
+      
+      // 初始检查
+      checkScroll();
+      
+      // 滚动监听
+      window.addEventListener('scroll', checkScroll);
+    });
+  </script>
+</body>
+</html>
